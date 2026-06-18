@@ -513,7 +513,7 @@
 
 <script>
 async function load() {
-  const res = await fetch('data/companies.json');
+  const res = await fetch('data/companies.json?v=' + Date.now());
   const data = await res.json();
   const conf = data.conference;
   const companies = data.companies;
