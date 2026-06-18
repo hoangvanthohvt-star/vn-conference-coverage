@@ -28,31 +28,7 @@
     min-height: 100vh;
   }
 
-  /* ── Card Actions ── */
-  .card-actions {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-  }
-  .upload-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--muted);
-    background: var(--surface2);
-    border: 1.5px dashed var(--border);
-    border-radius: 8px;
-    padding: 7px 14px;
-    cursor: pointer;
-    transition: border-color .15s, color .15s, background .15s;
-    white-space: nowrap;
-  }
-  .upload-label:hover { border-color: #173f35; color: #173f35; background: #f0f5f3; }
-  .upload-label--done { border-style: solid; border-color: #00bf6f; color: #009955; background: rgba(0,191,111,.06); }
+  /* ── PDF Button ── */
   .pdf-btn {
     display: inline-flex;
     align-items: center;
@@ -68,9 +44,10 @@
     cursor: pointer;
     transition: background .15s, color .15s;
     white-space: nowrap;
+    text-decoration: none;
+    margin-left: auto;
   }
-  .pdf-btn:hover:not(:disabled) { background: #173f35; color: #fff; }
-  .pdf-btn:disabled { opacity: .4; cursor: not-allowed; }
+  .pdf-btn:hover { background: #173f35; color: #fff; }
 
   /* ── Vietcap Logo ── */
   .vietcap-logo {
@@ -574,7 +551,6 @@
   <div class="gen-time" id="gen-time"></div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
 async function load() {
   const res = await fetch('data/companies.json?v=' + Date.now());
@@ -668,17 +644,10 @@ async function load() {
           <div class="analyst-avatar" style="color:${c.sectorColor};border-color:${c.sectorColor}44">${initials}</div>
           <div class="analyst-name">Coverage Analyst: <strong>${c.analyst}</strong></div>
           <div class="market-cap">Mkt Cap: <strong>${c.marketCap}</strong></div>
-          <div class="card-actions">
-            <label class="upload-label" id="upload-label-${c.ticker}" title="Attach a PDF report for this company">
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              <span>Upload Report</span>
-              <input type="file" accept=".pdf" style="display:none" onchange="handleUpload(this, '${c.ticker}')">
-            </label>
-            <button class="pdf-btn" id="pdf-btn-${c.ticker}" onclick="downloadPDF('${c.ticker}', '${c.name}')" disabled>
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PDF
-            </button>
-          </div>
+          <a class="pdf-btn" href="reports/${c.ticker}.pdf" download="${c.ticker}_VAD_Bangkok_2026.pdf">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Report
+          </a>
         </div>
       </div>
     `;
@@ -692,34 +661,6 @@ async function load() {
   document.getElementById('gen-time').textContent = 'Generated ' + now.toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
 }
 
-const uploadedReports = {};
-
-function handleUpload(input, ticker) {
-  const file = input.files[0];
-  if (!file) return;
-
-  uploadedReports[ticker] = file;
-
-  const label = document.getElementById('upload-label-' + ticker);
-  label.classList.add('upload-label--done');
-  label.querySelector('span').textContent = file.name.length > 22 ? file.name.slice(0, 20) + '…' : file.name;
-
-  const btn = document.getElementById('pdf-btn-' + ticker);
-  btn.disabled = false;
-}
-
-function downloadPDF(ticker, name) {
-  const file = uploadedReports[ticker];
-  if (!file) return;
-
-  const url = URL.createObjectURL(file);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `${ticker}_VAD_Bangkok_2026.pdf`;
-  document.body.appendChild(a);
-  a.click();
-  setTimeout(() => { URL.revokeObjectURL(url); document.body.removeChild(a); }, 1000);
-}
 
 load().catch(e => {
   document.getElementById('loading').textContent = 'Error loading data: ' + e.message;
