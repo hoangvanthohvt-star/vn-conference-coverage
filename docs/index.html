@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam Investor Conference 2026 — Company Coverage</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2e3348;
+    --text: #e8eaf0;
+    --muted: #8892a4;
+    --buy-green: #10b981;
+    --out-amber: #f59e0b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, #0f1117 0%, #1a1d27 40%, #0f172a 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(99,102,241,.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #818cf8;
+    background: rgba(99,102,241,.12);
+    border: 1px solid rgba(99,102,241,.3);
+    border-radius: 20px;
+    padding: 5px 14px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(26px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #e8eaf0 30%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+  .hero-meta svg { opacity: .6; }
+
+  /* ── Layout ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 48px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── Company Card ── */
+  .company-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .company-card:hover {
+    border-color: rgba(255,255,255,.12);
+    box-shadow: 0 8px 40px rgba(0,0,0,.4);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px 28px 0;
+    flex-wrap: wrap;
+  }
+  .card-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .ticker-block { flex: 0 0 auto; }
+  .ticker-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 2px solid;
+  }
+  .company-name {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .sector-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.06);
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .sector-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+  .rating-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 6px;
+  }
+  .rating-BUY { background: rgba(16,185,129,.15); color: #10b981; border: 1px solid rgba(16,185,129,.3); }
+  .rating-OUTPERFORM { background: rgba(245,158,11,.15); color: #f59e0b; border: 1px solid rgba(245,158,11,.3); }
+
+  .price-block {
+    margin-left: auto;
+    text-align: right;
+    flex: 0 0 auto;
+  }
+  .target-price {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1;
+  }
+  .price-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .upside-badge {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #10b981;
+    background: rgba(16,185,129,.1);
+    border: 1px solid rgba(16,185,129,.2);
+    border-radius: 8px;
+    padding: 3px 10px;
+    margin-top: 4px;
+  }
+  .current-price { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  .card-body { padding: 24px 28px 28px; }
+
+  /* ── Thesis ── */
+  .thesis-box {
+    background: var(--surface2);
+    border-left: 3px solid;
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #c8ccd8;
+    margin-bottom: 24px;
+  }
+
+  /* ── Key Metrics ── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .metric-cell {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .metric-label { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: .05em; margin-bottom: 4px; }
+  .metric-value { font-size: 18px; font-weight: 700; }
+
+  /* ── Catalysts & Risks ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  .list-box { border-radius: 10px; padding: 14px 16px; }
+  .list-box.catalysts { background: rgba(16,185,129,.04); border: 1px solid rgba(16,185,129,.15); }
+  .list-box.risks     { background: rgba(239,68,68,.04);  border: 1px solid rgba(239,68,68,.15);  }
+  .list-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .list-box.catalysts .list-title { color: #10b981; }
+  .list-box.risks     .list-title { color: #f87171; }
+  .list-box ul { list-style: none; }
+  .list-box ul li {
+    font-size: 13px;
+    color: #9ca3af;
+    padding: 4px 0;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .list-box ul li::before { content: '›'; position: absolute; left: 0; font-weight: 700; }
+  .list-box.catalysts ul li::before { color: #10b981; }
+  .list-box.risks     ul li::before { color: #f87171; }
+
+  /* ── Analyst ── */
+  .analyst-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .analyst-avatar {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .analyst-name { font-size: 13px; color: var(--muted); }
+  .analyst-name strong { color: var(--text); font-weight: 600; }
+  .market-cap { margin-left: auto; font-size: 12px; color: var(--muted); }
+  .market-cap strong { color: var(--text); }
+
+  /* ── Summary table ── */
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 48px;
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .summary-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  .summary-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .summary-table tr:last-child td { border-bottom: none; }
+  .summary-table tr:hover td { background: rgba(255,255,255,.02); }
+  .ticker-cell { font-weight: 800; font-size: 15px; }
+  .upside-cell { font-weight: 700; color: #10b981; }
+  .num-cell { font-variant-numeric: tabular-nums; }
+
+  /* ── Footer ── */
+  footer {
+    margin-top: 60px;
+    padding: 32px 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  footer p {
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto 8px;
+    line-height: 1.6;
+  }
+  footer .gen-time { font-size: 11px; color: #4b5563; margin-top: 12px; }
+
+  /* ── Loading ── */
+  #loading {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+    font-size: 15px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Investor Conference</div>
+  <h1 id="conf-title">Loading…</h1>
+  <p class="hero-sub" id="conf-tagline"></p>
+  <div class="hero-meta">
+    <span>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <span id="conf-date"></span>
+    </span>
+    <span>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      5 Companies Under Coverage
+    </span>
+    <span>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <span id="conf-organizer"></span>
+    </span>
+  </div>
+</div>
+
+<div class="container">
+  <div id="loading">Loading company data…</div>
+  <div id="content" style="display:none">
+
+    <div class="section-label">At a Glance</div>
+    <table class="summary-table" id="summary-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ticker</th>
+          <th>Company</th>
+          <th>Sector</th>
+          <th>Rating</th>
+          <th>Target (VND)</th>
+          <th>Current (VND)</th>
+          <th>Upside</th>
+          <th>Mkt Cap</th>
+          <th>Analyst</th>
+        </tr>
+      </thead>
+      <tbody id="summary-body"></tbody>
+    </table>
+
+    <div class="section-label">Company Deep Dives</div>
+    <div id="cards-container"></div>
+
+  </div>
+</div>
+
+<footer>
+  <p>This document is prepared by <span id="footer-org"></span> for conference use only. The information contained herein is based on sources believed to be reliable but is not guaranteed. This is not an offer to buy or sell any security. Past performance is not indicative of future results.</p>
+  <p>Target prices are based on 12-month forward estimates. Investors should consider their own risk tolerance before making investment decisions.</p>
+  <div class="gen-time" id="gen-time"></div>
+</footer>
+
+<script>
+async function load() {
+  const res = await fetch('data/companies.json');
+  const data = await res.json();
+  const conf = data.conference;
+  const companies = data.companies;
+
+  // Hero
+  document.getElementById('conf-title').textContent = conf.name;
+  document.getElementById('conf-tagline').textContent = conf.tagline;
+  document.getElementById('conf-date').textContent = conf.date;
+  document.getElementById('conf-organizer').textContent = conf.organizer;
+  document.getElementById('footer-org').textContent = conf.organizer;
+  document.title = conf.name + ' — Company Coverage';
+
+  // Summary table
+  const tbody = document.getElementById('summary-body');
+  companies.forEach(c => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="num-cell" style="color:var(--muted)">${c.id}</td>
+      <td class="ticker-cell" style="color:${c.sectorColor}">${c.ticker}</td>
+      <td style="font-weight:600">${c.name}</td>
+      <td style="color:var(--muted);font-size:13px">${c.sector}</td>
+      <td><span class="rating-pill rating-${c.rating}">${c.rating}</span></td>
+      <td class="num-cell" style="font-weight:700">${c.targetPrice.toLocaleString()}</td>
+      <td class="num-cell" style="color:var(--muted)">${c.currentPrice.toLocaleString()}</td>
+      <td class="upside-cell num-cell">+${c.upside}%</td>
+      <td style="color:var(--muted);font-size:13px">${c.marketCap}</td>
+      <td style="font-size:13px;color:var(--muted)">${c.analyst}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Cards
+  const container = document.getElementById('cards-container');
+  companies.forEach(c => {
+    const initials = c.analyst.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+    const card = document.createElement('div');
+    card.className = 'company-card';
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="ticker-block">
+          <div class="card-num">Company ${c.id} of ${companies.length}</div>
+          <div class="ticker-badge" style="color:${c.sectorColor};border-color:${c.sectorColor}33;background:${c.sectorColor}11">
+            ${c.ticker}
+          </div>
+        </div>
+        <div style="flex:1;min-width:200px">
+          <div class="company-name">${c.name}</div>
+          <div>
+            <span class="sector-tag">
+              <span class="sector-dot" style="background:${c.sectorColor}"></span>
+              ${c.sector}
+            </span>
+            <span class="rating-pill rating-${c.rating}">${c.rating}</span>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="price-label">12M Target</div>
+          <div class="target-price" style="color:${c.sectorColor}">${c.targetPrice.toLocaleString()}</div>
+          <div><span class="upside-badge">↑ ${c.upside}% upside</span></div>
+          <div class="current-price">Current: ${c.currentPrice.toLocaleString()} VND</div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="thesis-box" style="border-color:${c.sectorColor}">
+          ${c.thesis}
+        </div>
+
+        <div class="metrics-grid">
+          ${c.keyMetrics.map(m => `
+            <div class="metric-cell">
+              <div class="metric-label">${m.label}</div>
+              <div class="metric-value" style="color:${c.sectorColor}">${m.value}</div>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="two-col">
+          <div class="list-box catalysts">
+            <div class="list-title">Key Catalysts</div>
+            <ul>${c.catalysts.map(x => `<li>${x}</li>`).join('')}</ul>
+          </div>
+          <div class="list-box risks">
+            <div class="list-title">Key Risks</div>
+            <ul>${c.risks.map(x => `<li>${x}</li>`).join('')}</ul>
+          </div>
+        </div>
+
+        <div class="analyst-row">
+          <div class="analyst-avatar" style="color:${c.sectorColor};border-color:${c.sectorColor}44">${initials}</div>
+          <div class="analyst-name">Coverage Analyst: <strong>${c.analyst}</strong></div>
+          <div class="market-cap">Mkt Cap: <strong>${c.marketCap}</strong></div>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+
+  const now = new Date();
+  document.getElementById('gen-time').textContent = 'Generated ' + now.toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
+}
+
+load().catch(e => {
+  document.getElementById('loading').textContent = 'Error loading data: ' + e.message;
+});
+</script>
+</body>
+</html>
