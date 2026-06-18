@@ -530,9 +530,7 @@ async function load() {
   const companies = data.companies;
 
   // Hero
-  document.getElementById('conf-title').textContent = conf.name;
-  document.getElementById('conf-tagline').textContent = conf.tagline;
-  document.getElementById('conf-date').textContent = conf.date;
+  document.title = conf.name + ' — Company Coverage';
   document.title = conf.name + ' — Company Coverage';
 
   // Summary table
