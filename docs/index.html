@@ -28,6 +28,15 @@
     min-height: 100vh;
   }
 
+  /* ── Vietcap Logo ── */
+  .vietcap-logo {
+    margin-bottom: 24px;
+  }
+  .vietcap-logo svg {
+    width: 160px;
+    height: auto;
+  }
+
   /* ── Hero ── */
   .hero {
     background: var(--dark);
@@ -437,6 +446,12 @@
 <body>
 
 <div class="hero">
+  <div class="vietcap-logo" aria-label="Vietcap Securities">
+    <svg viewBox="0 0 220 52" xmlns="http://www.w3.org/2000/svg" role="img">
+      <text x="0" y="42" font-family="'Segoe UI',system-ui,sans-serif" font-size="48" font-weight="800" fill="#ffffff" letter-spacing="-1">Vietcap</text>
+      <polygon points="200,4 216,32 184,32" fill="#00e600"/>
+    </svg>
+  </div>
   <div class="hero-badge">Investor Conference</div>
   <h1 id="conf-title">Loading…</h1>
   <p class="hero-sub" id="conf-tagline"></p>
@@ -448,6 +463,10 @@
     <span>
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
       4 Companies Under Coverage
+    </span>
+    <span>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Vietcap Securities
     </span>
   </div>
 </div>
