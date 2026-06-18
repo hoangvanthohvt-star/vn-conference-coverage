@@ -1,0 +1,120 @@
+{
+  "conference": {
+    "name": "Vietnam Investor Conference 2026",
+    "date": "June 2026",
+    "organizer": "DCG Research",
+    "tagline": "5 High-Conviction Ideas for the Next Cycle"
+  },
+  "companies": [
+    {
+      "id": 1,
+      "ticker": "VIC",
+      "name": "Vingroup JSC",
+      "sector": "Real Estate & Conglomerate",
+      "sectorColor": "#6366f1",
+      "rating": "BUY",
+      "targetPrice": 75000,
+      "currentPrice": 58000,
+      "upside": 29.3,
+      "marketCap": "USD 8.2B",
+      "analyst": "Nguyen Van A",
+      "thesis": "Vingroup's diversified ecosystem — spanning real estate, automotive (VinFast), and retail — positions it uniquely to capture Vietnam's rising middle-class consumption. Asset monetization pipeline and VinFast's global expansion provide multiple re-rating catalysts over 12–18 months.",
+      "keyMetrics": [
+        { "label": "P/E 2026E", "value": "12.4x" },
+        { "label": "P/B", "value": "1.8x" },
+        { "label": "Revenue Growth", "value": "+22% YoY" },
+        { "label": "ROE", "value": "14%" }
+      ],
+      "catalysts": ["VinFast US listing volume ramp", "Vinhomes land bank monetization", "Retail expansion to tier-2 cities"],
+      "risks": ["Leverage levels", "Execution risk on VinFast"]
+    },
+    {
+      "id": 2,
+      "ticker": "MBB",
+      "name": "Military Commercial Bank",
+      "sector": "Banking",
+      "sectorColor": "#0ea5e9",
+      "rating": "BUY",
+      "targetPrice": 28000,
+      "currentPrice": 21500,
+      "upside": 30.2,
+      "marketCap": "USD 3.1B",
+      "analyst": "Tran Thi B",
+      "thesis": "MBB offers the most attractive risk/reward in the banking sector, trading at a significant discount to peers despite superior ROE and one of the cleanest balance sheets. Digital banking momentum (MB App) is driving low-cost deposit growth and fee income expansion.",
+      "keyMetrics": [
+        { "label": "P/B 2026E", "value": "1.1x" },
+        { "label": "ROE", "value": "21%" },
+        { "label": "NIM", "value": "5.2%" },
+        { "label": "NPL Ratio", "value": "1.3%" }
+      ],
+      "catalysts": ["Credit growth re-acceleration", "Fee income from bancassurance", "Dividend resumption"],
+      "risks": ["Credit quality in SME segment", "Rate compression"]
+    },
+    {
+      "id": 3,
+      "ticker": "FPT",
+      "name": "FPT Corporation",
+      "sector": "Technology",
+      "sectorColor": "#10b981",
+      "rating": "BUY",
+      "targetPrice": 145000,
+      "currentPrice": 112000,
+      "upside": 29.5,
+      "marketCap": "USD 4.7B",
+      "analyst": "Le Van C",
+      "thesis": "FPT is Vietnam's premier tech exporter, with a fast-growing IT outsourcing business serving Japanese and US clients. AI-driven service upgrades and semiconductor education programs position FPT to capture the global tech supply chain shift into Vietnam.",
+      "keyMetrics": [
+        { "label": "P/E 2026E", "value": "18.2x" },
+        { "label": "Revenue Growth", "value": "+28% YoY" },
+        { "label": "EBIT Margin", "value": "19%" },
+        { "label": "Offshore Rev.", "value": "USD 900M" }
+      ],
+      "catalysts": ["AI service line launch", "US client base expansion", "FPT Semiconductor school graduates"],
+      "risks": ["FX headwinds on USD revenue", "Talent cost inflation"]
+    },
+    {
+      "id": 4,
+      "ticker": "HPG",
+      "name": "Hoa Phat Group",
+      "sector": "Steel & Industry",
+      "sectorColor": "#f59e0b",
+      "rating": "OUTPERFORM",
+      "targetPrice": 32000,
+      "currentPrice": 25500,
+      "upside": 25.5,
+      "marketCap": "USD 5.4B",
+      "analyst": "Pham Thi D",
+      "thesis": "HPG is Southeast Asia's largest steel producer and a direct beneficiary of Vietnam's infrastructure supercycle. Dung Quat Phase 2 coming online doubles hot-rolled coil capacity, enabling market share gains in the high-margin automotive steel segment.",
+      "keyMetrics": [
+        { "label": "P/E 2026E", "value": "9.8x" },
+        { "label": "EV/EBITDA", "value": "5.2x" },
+        { "label": "Capacity", "value": "14M tonnes/yr" },
+        { "label": "EBITDA Margin", "value": "18%" }
+      ],
+      "catalysts": ["Dung Quat Phase 2 ramp", "Infrastructure spending acceleration", "China steel export reduction"],
+      "risks": ["Iron ore price volatility", "Domestic demand slowdown"]
+    },
+    {
+      "id": 5,
+      "ticker": "VHM",
+      "name": "Vinhomes JSC",
+      "sector": "Real Estate",
+      "sectorColor": "#ec4899",
+      "rating": "BUY",
+      "targetPrice": 58000,
+      "currentPrice": 43000,
+      "upside": 34.9,
+      "marketCap": "USD 10.1B",
+      "analyst": "Hoang Van E",
+      "thesis": "Vinhomes controls Vietnam's most valuable residential land bank and operates the only township-scale master-planned communities in the country. Undersupply of quality housing in Hanoi and HCMC creates structural pricing power, while the social housing mandate opens a new volume segment.",
+      "keyMetrics": [
+        { "label": "P/E 2026E", "value": "8.1x" },
+        { "label": "NAV Discount", "value": "45%" },
+        { "label": "Pre-sales", "value": "VND 85T" },
+        { "label": "Land Bank", "value": "16,000 ha" }
+      ],
+      "catalysts": ["Social housing project launches", "Hanoi land rezoning approvals", "REIT structure exploration"],
+      "risks": ["Policy risk on real estate lending", "Liquidity premium compression"]
+    }
+  ]
+}
