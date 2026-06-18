@@ -455,6 +455,125 @@
   }
   footer .gen-time { font-size: 11px; color: rgba(255,255,255,.25); margin-top: 12px; }
 
+  /* ── Register Button ── */
+  .register-btn {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    color: #173f35;
+    background: #00bf6f;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: background .15s, transform .1s;
+  }
+  .register-btn:hover { background: #00d97a; transform: translateY(-1px); }
+
+  /* ── Modal ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 580px;
+    position: relative;
+    box-shadow: 0 24px 80px rgba(0,0,0,.2);
+    animation: modalIn .2s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(16px) scale(.97); }
+    to   { opacity: 1; transform: translateY(0)   scale(1);    }
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: var(--surface2);
+    border: none;
+    border-radius: 50%;
+    width: 32px; height: 32px;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--muted);
+    display: flex; align-items: center; justify-content: center;
+    transition: background .15s;
+  }
+  .modal-close:hover { background: var(--border); color: var(--text); }
+  .modal-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #009955;
+    background: rgba(0,191,111,.1);
+    border: 1px solid rgba(0,191,111,.25);
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin-bottom: 12px;
+  }
+  .modal-title { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .modal-sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 12px; font-weight: 700; color: var(--text); letter-spacing: .03em; }
+  .req { color: #cc3333; }
+  .form-group input {
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: var(--text);
+    background: #fff;
+    outline: none;
+    transition: border-color .15s;
+    font-family: inherit;
+  }
+  .form-group input:focus { border-color: #00bf6f; }
+  .form-group input::placeholder { color: #c4c8cc; }
+  .form-submit {
+    margin-top: 8px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    background: #173f35;
+    border: none;
+    border-radius: 10px;
+    padding: 13px;
+    cursor: pointer;
+    transition: background .15s;
+    font-family: inherit;
+  }
+  .form-submit:hover { background: #0f2e26; }
+  .form-submit:disabled { opacity: .6; cursor: wait; }
+  .form-success { text-align: center; padding: 16px 0; }
+  .success-icon { margin-bottom: 16px; }
+  .form-success h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+  .form-success p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
   /* ── Loading ── */
   #loading {
     text-align: center;
@@ -489,6 +608,56 @@
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       Vietcap Securities
     </span>
+  </div>
+  <button class="register-btn" onclick="openModal()">
+    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+    Register to Attend
+  </button>
+</div>
+
+<!-- Registration Modal -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-badge">VAD Bangkok 2026</div>
+      <h2 class="modal-title" id="modal-title">Register to Attend</h2>
+      <p class="modal-sub">Secure your place at the conference. We'll send confirmation details to your email.</p>
+    </div>
+    <form id="reg-form" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reg-name">Full Name <span class="req">*</span></label>
+          <input type="text" id="reg-name" name="name" placeholder="Nguyen Van A" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email Address <span class="req">*</span></label>
+          <input type="email" id="reg-email" name="email" placeholder="you@company.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reg-company">Company / Organization <span class="req">*</span></label>
+          <input type="text" id="reg-company" name="company" placeholder="Vietcap Securities" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-title">Job Title <span class="req">*</span></label>
+          <input type="text" id="reg-title" name="jobTitle" placeholder="Portfolio Manager">
+        </div>
+      </div>
+      <button type="submit" class="form-submit" id="form-submit">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Confirm Registration
+      </button>
+    </form>
+    <div class="form-success" id="form-success" style="display:none">
+      <div class="success-icon">
+        <svg width="32" height="32" fill="none" stroke="#00bf6f" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <h3>You're registered!</h3>
+      <p>Thank you for registering. We'll send confirmation details to your email shortly.</p>
+      <button class="form-submit" onclick="closeModal()" style="margin-top:16px">Close</button>
+    </div>
   </div>
 </div>
 
@@ -552,6 +721,60 @@
 </footer>
 
 <script>
+// ── Registration ──
+// Paste your Google Apps Script Web App URL below after deploying the script
+const SHEET_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+
+function openModal() {
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('reg-name').focus();
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+  // Reset form for next open
+  document.getElementById('reg-form').style.display = '';
+  document.getElementById('form-success').style.display = 'none';
+  document.getElementById('reg-form').reset();
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+async function submitForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById('form-submit');
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+
+  const payload = {
+    name:     document.getElementById('reg-name').value,
+    email:    document.getElementById('reg-email').value,
+    company:  document.getElementById('reg-company').value,
+    jobTitle: document.getElementById('reg-title').value,
+    timestamp: new Date().toISOString()
+  };
+
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+  } catch (_) { /* no-cors fetch always resolves */ }
+
+  document.getElementById('reg-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+
 async function load() {
   const res = await fetch('data/companies.json?v=' + Date.now());
   const data = await res.json();
