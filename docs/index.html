@@ -370,10 +370,6 @@
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
       5 Companies Under Coverage
     </span>
-    <span>
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-      <span id="conf-organizer"></span>
-    </span>
   </div>
 </div>
 
@@ -407,7 +403,7 @@
 </div>
 
 <footer>
-  <p>This document is prepared by <span id="footer-org"></span> for conference use only. The information contained herein is based on sources believed to be reliable but is not guaranteed. This is not an offer to buy or sell any security. Past performance is not indicative of future results.</p>
+  <p>This document is prepared for conference use only. The information contained herein is based on sources believed to be reliable but is not guaranteed. This is not an offer to buy or sell any security. Past performance is not indicative of future results.</p>
   <p>Target prices are based on 12-month forward estimates. Investors should consider their own risk tolerance before making investment decisions.</p>
   <div class="gen-time" id="gen-time"></div>
 </footer>
@@ -423,8 +419,6 @@ async function load() {
   document.getElementById('conf-title').textContent = conf.name;
   document.getElementById('conf-tagline').textContent = conf.tagline;
   document.getElementById('conf-date').textContent = conf.date;
-  document.getElementById('conf-organizer').textContent = conf.organizer;
-  document.getElementById('footer-org').textContent = conf.organizer;
   document.title = conf.name + ' — Company Coverage';
 
   // Summary table
