@@ -54,18 +54,21 @@
 
   /* ── Vietcap Logo ── */
   .vietcap-logo-img {
-    height: 72px;
-    margin-bottom: 28px;
+    height: 64px;
+    margin-bottom: 32px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,.4));
   }
 
   /* ── Hero ── */
   .hero {
-    background: var(--dark);
+    background-image: url('images/backdrop-bangkok.jpg');
+    background-size: cover;
+    background-position: center top;
     border-bottom: none;
-    padding: 52px 24px 44px;
+    padding: 64px 24px 56px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -73,61 +76,61 @@
   .hero::before {
     content: '';
     position: absolute;
-    top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    background: var(--green);
-    opacity: .07;
-    border-radius: 50%;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,28,20,.72) 0%, rgba(10,28,20,.58) 60%, rgba(10,28,20,.78) 100%);
     pointer-events: none;
   }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; left: -40px;
-    width: 200px; height: 200px;
-    background: var(--gold);
-    opacity: .06;
-    border-radius: 50%;
-    pointer-events: none;
-  }
+  .hero > * { position: relative; z-index: 1; }
   .hero-badge {
     display: inline-block;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: .12em;
     text-transform: uppercase;
-    color: var(--green);
-    background: rgba(0,191,111,.12);
-    border: 1px solid rgba(0,191,111,.3);
+    color: #4ADE80;
+    background: rgba(74,222,128,.12);
+    border: 1px solid rgba(74,222,128,.35);
     border-radius: 20px;
     padding: 5px 14px;
     margin-bottom: 20px;
   }
   .hero h1 {
-    font-size: clamp(26px, 5vw, 46px);
+    font-size: clamp(26px, 5vw, 48px);
     font-weight: 800;
     letter-spacing: -.02em;
     line-height: 1.15;
     margin-bottom: 12px;
     color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0,0,0,.4);
   }
   .hero-sub {
     font-size: 15px;
-    color: rgba(255,255,255,.6);
+    color: rgba(255,255,255,.75);
     max-width: 520px;
     margin: 0 auto 28px;
     line-height: 1.6;
+    text-shadow: 0 1px 6px rgba(0,0,0,.3);
   }
   .hero-meta {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 16px;
     flex-wrap: wrap;
     font-size: 13px;
-    color: rgba(255,255,255,.55);
+    color: rgba(255,255,255,.8);
+    margin-bottom: 8px;
   }
-  .hero-meta span { display: flex; align-items: center; gap: 6px; }
-  .hero-meta svg { opacity: .6; }
+  .hero-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 20px;
+    padding: 5px 12px;
+    backdrop-filter: blur(4px);
+  }
+  .hero-meta svg { opacity: .8; }
 
   /* ── FTSE Session ── */
   .ftse-session {
