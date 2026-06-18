@@ -2,118 +2,96 @@
   "conference": {
     "name": "Vietnam Investor Conference 2026",
     "date": "June 2026",
-    "tagline": "5 High-Conviction Ideas for the Next Cycle"
+    "tagline": "4 High-Conviction Ideas for the Next Cycle"
   },
   "companies": [
     {
       "id": 1,
-      "ticker": "VIC",
-      "name": "Vingroup JSC",
-      "sector": "Real Estate & Conglomerate",
+      "ticker": "F88",
+      "name": "Funding for Business JSC",
+      "sector": "Consumer Finance",
       "sectorColor": "#6366f1",
       "rating": "BUY",
-      "targetPrice": 75000,
-      "currentPrice": 58000,
-      "upside": 29.3,
-      "marketCap": "USD 8.2B",
+      "targetPrice": 28000,
+      "currentPrice": 21000,
+      "upside": 33.3,
+      "marketCap": "USD 320M",
       "analyst": "Nguyen Van A",
-      "thesis": "Vingroup's diversified ecosystem — spanning real estate, automotive (VinFast), and retail — positions it uniquely to capture Vietnam's rising middle-class consumption. Asset monetization pipeline and VinFast's global expansion provide multiple re-rating catalysts over 12–18 months.",
+      "thesis": "F88 is Vietnam's leading consumer lending chain with over 800 branches nationwide, targeting the underbanked segment. Rising financial inclusion, strong loan book growth, and improving credit scoring capabilities position F88 to sustain above-sector ROE as the formal lending market deepens.",
       "keyMetrics": [
-        { "label": "P/E 2026E", "value": "12.4x" },
-        { "label": "P/B", "value": "1.8x" },
-        { "label": "Revenue Growth", "value": "+22% YoY" },
-        { "label": "ROE", "value": "14%" }
+        { "label": "P/E 2026E", "value": "11.2x" },
+        { "label": "P/B", "value": "2.1x" },
+        { "label": "Loan Growth", "value": "+35% YoY" },
+        { "label": "ROE", "value": "22%" }
       ],
-      "catalysts": ["VinFast US listing volume ramp", "Vinhomes land bank monetization", "Retail expansion to tier-2 cities"],
-      "risks": ["Leverage levels", "Execution risk on VinFast"]
+      "catalysts": ["Branch network expansion to 1,000+", "Credit scoring tech upgrade", "Rising middle-class borrowing demand"],
+      "risks": ["Regulatory tightening on consumer lending", "Asset quality deterioration in downturn"]
     },
     {
       "id": 2,
-      "ticker": "MBB",
-      "name": "Military Commercial Bank",
-      "sector": "Banking",
+      "ticker": "GMD",
+      "name": "Gemadept Corporation",
+      "sector": "Logistics & Ports",
       "sectorColor": "#0ea5e9",
       "rating": "BUY",
-      "targetPrice": 28000,
-      "currentPrice": 21500,
-      "upside": 30.2,
-      "marketCap": "USD 3.1B",
+      "targetPrice": 65000,
+      "currentPrice": 50000,
+      "upside": 30.0,
+      "marketCap": "USD 680M",
       "analyst": "Tran Thi B",
-      "thesis": "MBB offers the most attractive risk/reward in the banking sector, trading at a significant discount to peers despite superior ROE and one of the cleanest balance sheets. Digital banking momentum (MB App) is driving low-cost deposit growth and fee income expansion.",
+      "thesis": "Gemadept is Vietnam's premier port and logistics operator, uniquely positioned to capture surging export volumes driven by supply chain diversification away from China. The Nam Dinh Vu deep-water terminal expansion and growing cold-chain logistics segment provide visible earnings growth through 2027.",
       "keyMetrics": [
-        { "label": "P/B 2026E", "value": "1.1x" },
-        { "label": "ROE", "value": "21%" },
-        { "label": "NIM", "value": "5.2%" },
-        { "label": "NPL Ratio", "value": "1.3%" }
+        { "label": "P/E 2026E", "value": "14.5x" },
+        { "label": "EV/EBITDA", "value": "8.2x" },
+        { "label": "Revenue Growth", "value": "+24% YoY" },
+        { "label": "EBITDA Margin", "value": "38%" }
       ],
-      "catalysts": ["Credit growth re-acceleration", "Fee income from bancassurance", "Dividend resumption"],
-      "risks": ["Credit quality in SME segment", "Rate compression"]
+      "catalysts": ["Nam Dinh Vu Phase 2 completion", "FDI-driven export volume ramp", "Cold-chain logistics expansion"],
+      "risks": ["Global trade slowdown", "Competition from new port entrants"]
     },
     {
       "id": 3,
-      "ticker": "FPT",
-      "name": "FPT Corporation",
-      "sector": "Technology",
+      "ticker": "DXG",
+      "name": "Dat Xanh Group",
+      "sector": "Real Estate",
       "sectorColor": "#10b981",
-      "rating": "BUY",
-      "targetPrice": 145000,
-      "currentPrice": 112000,
-      "upside": 29.5,
-      "marketCap": "USD 4.7B",
+      "rating": "OUTPERFORM",
+      "targetPrice": 18000,
+      "currentPrice": 13500,
+      "upside": 33.3,
+      "marketCap": "USD 410M",
       "analyst": "Le Van C",
-      "thesis": "FPT is Vietnam's premier tech exporter, with a fast-growing IT outsourcing business serving Japanese and US clients. AI-driven service upgrades and semiconductor education programs position FPT to capture the global tech supply chain shift into Vietnam.",
+      "thesis": "Dat Xanh is a diversified real estate developer with strong mid-market residential exposure in Ho Chi Minh City and the southern provinces. Legal clearances on key projects, improving mortgage market conditions, and a recovering property cycle position DXG for a meaningful earnings re-rating over the next 12–18 months.",
       "keyMetrics": [
-        { "label": "P/E 2026E", "value": "18.2x" },
-        { "label": "Revenue Growth", "value": "+28% YoY" },
-        { "label": "EBIT Margin", "value": "19%" },
-        { "label": "Offshore Rev.", "value": "USD 900M" }
+        { "label": "P/E 2026E", "value": "9.4x" },
+        { "label": "P/B", "value": "1.3x" },
+        { "label": "Pre-sales Growth", "value": "+40% YoY" },
+        { "label": "NAV Discount", "value": "38%" }
       ],
-      "catalysts": ["AI service line launch", "US client base expansion", "FPT Semiconductor school graduates"],
-      "risks": ["FX headwinds on USD revenue", "Talent cost inflation"]
+      "catalysts": ["Project legal approval pipeline", "Mortgage rate easing cycle", "Southern Vietnam urbanisation"],
+      "risks": ["Policy risk on real estate credit", "Prolonged project approval delays"]
     },
     {
       "id": 4,
-      "ticker": "HPG",
-      "name": "Hoa Phat Group",
-      "sector": "Steel & Industry",
+      "ticker": "MCH",
+      "name": "Masan Consumer Holdings",
+      "sector": "Consumer Staples",
       "sectorColor": "#f59e0b",
-      "rating": "OUTPERFORM",
-      "targetPrice": 32000,
-      "currentPrice": 25500,
-      "upside": 25.5,
-      "marketCap": "USD 5.4B",
-      "analyst": "Pham Thi D",
-      "thesis": "HPG is Southeast Asia's largest steel producer and a direct beneficiary of Vietnam's infrastructure supercycle. Dung Quat Phase 2 coming online doubles hot-rolled coil capacity, enabling market share gains in the high-margin automotive steel segment.",
-      "keyMetrics": [
-        { "label": "P/E 2026E", "value": "9.8x" },
-        { "label": "EV/EBITDA", "value": "5.2x" },
-        { "label": "Capacity", "value": "14M tonnes/yr" },
-        { "label": "EBITDA Margin", "value": "18%" }
-      ],
-      "catalysts": ["Dung Quat Phase 2 ramp", "Infrastructure spending acceleration", "China steel export reduction"],
-      "risks": ["Iron ore price volatility", "Domestic demand slowdown"]
-    },
-    {
-      "id": 5,
-      "ticker": "VHM",
-      "name": "Vinhomes JSC",
-      "sector": "Real Estate",
-      "sectorColor": "#ec4899",
       "rating": "BUY",
-      "targetPrice": 58000,
-      "currentPrice": 43000,
-      "upside": 34.9,
-      "marketCap": "USD 10.1B",
-      "analyst": "Hoang Van E",
-      "thesis": "Vinhomes controls Vietnam's most valuable residential land bank and operates the only township-scale master-planned communities in the country. Undersupply of quality housing in Hanoi and HCMC creates structural pricing power, while the social housing mandate opens a new volume segment.",
+      "targetPrice": 210000,
+      "currentPrice": 162000,
+      "upside": 29.6,
+      "marketCap": "USD 2.1B",
+      "analyst": "Pham Thi D",
+      "thesis": "Masan Consumer is Vietnam's dominant branded food and beverage company with unmatched distribution across 180,000+ points of sale. Premiumisation of the product portfolio, strong brand loyalty in seasonings and instant noodles, and digital retail penetration support a durable 15–18% earnings CAGR through the cycle.",
       "keyMetrics": [
-        { "label": "P/E 2026E", "value": "8.1x" },
-        { "label": "NAV Discount", "value": "45%" },
-        { "label": "Pre-sales", "value": "VND 85T" },
-        { "label": "Land Bank", "value": "16,000 ha" }
+        { "label": "P/E 2026E", "value": "19.8x" },
+        { "label": "Revenue Growth", "value": "+18% YoY" },
+        { "label": "EBIT Margin", "value": "22%" },
+        { "label": "Dividend Yield", "value": "2.8%" }
       ],
-      "catalysts": ["Social housing project launches", "Hanoi land rezoning approvals", "REIT structure exploration"],
-      "risks": ["Policy risk on real estate lending", "Liquidity premium compression"]
+      "catalysts": ["Premiumisation of core SKUs", "Modern trade channel expansion", "Regional export growth"],
+      "risks": ["Input cost inflation (wheat, oil)", "Intensifying private-label competition"]
     }
   ]
 }

@@ -96,6 +96,85 @@
   .hero-meta span { display: flex; align-items: center; gap: 6px; }
   .hero-meta svg { opacity: .6; }
 
+  /* ── FTSE Session ── */
+  .ftse-session {
+    background: linear-gradient(135deg, #0c2340 0%, #1a3a5c 100%);
+    border: 1px solid #1e4976;
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .ftse-session::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: #1d6fa4;
+    opacity: .12;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .ftse-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .ftse-badge {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #1d6fa4;
+    border: 1px solid #2a85c4;
+    border-radius: 6px;
+    padding: 4px 12px;
+  }
+  .ftse-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #7dbfea;
+    border: 1px solid #2a4d6e;
+    border-radius: 20px;
+    padding: 3px 10px;
+  }
+  .ftse-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -.01em;
+    margin-bottom: 12px;
+  }
+  .ftse-desc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(255,255,255,.7);
+    max-width: 780px;
+    margin-bottom: 20px;
+  }
+  .ftse-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    font-weight: 600;
+    color: #7dbfea;
+  }
+  .ftse-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px;
+    padding: 5px 12px;
+  }
+
   /* ── Layout ── */
   .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
   .section-label {
@@ -368,7 +447,7 @@
     </span>
     <span>
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      5 Companies Under Coverage
+      4 Companies Under Coverage
     </span>
   </div>
 </div>
@@ -376,6 +455,30 @@
 <div class="container">
   <div id="loading">Loading company data…</div>
   <div id="content" style="display:none">
+
+    <div class="section-label">Featured Session</div>
+    <div class="ftse-session">
+      <div class="ftse-logo-row">
+        <span class="ftse-badge">FTSE Russell</span>
+        <span class="ftse-tag">Market Update</span>
+      </div>
+      <div class="ftse-title">Vietnam Market Update</div>
+      <p class="ftse-desc">Join FTSE Russell for an update on Vietnam's capital markets following its upgrade to Secondary Emerging Market status. The session will cover recent regulatory and market developments, implications for foreign investment flows, market accessibility reforms, and Vietnam's outlook within global emerging market portfolios.</p>
+      <div class="ftse-meta">
+        <span>
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+          Secondary Emerging Market Upgrade
+        </span>
+        <span>
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Foreign Investment Flows
+        </span>
+        <span>
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          EM Portfolio Outlook
+        </span>
+      </div>
+    </div>
 
     <div class="section-label">At a Glance</div>
     <table class="summary-table" id="summary-table">
