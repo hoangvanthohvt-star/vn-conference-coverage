@@ -66,27 +66,29 @@
     object-fit: cover;
     object-position: center center;
   }
-  .hero-action-bar {
-    background: #0a0a0a;
-    border-top: 1px solid rgba(74,222,128,.2);
-    display: flex;
+  .hero-register-btn {
+    position: absolute;
+    bottom: 32px;
+    right: 36px;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 18px 24px;
-    flex-wrap: wrap;
-  }
-  .hero-action-bar .coverage-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: rgba(255,255,255,.5);
-    letter-spacing: .06em;
-    text-transform: uppercase;
-  }
-  .hero-action-bar .coverage-count {
-    font-size: 14px;
+    gap: 9px;
+    background: #4ADE80;
+    color: #0a1a0f;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
     font-weight: 700;
-    color: #4ADE80;
+    letter-spacing: .03em;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(74,222,128,.45);
+    transition: background .2s, box-shadow .2s, transform .15s;
+  }
+  .hero-register-btn:hover {
+    background: #22c55e;
+    box-shadow: 0 6px 32px rgba(74,222,128,.65);
+    transform: translateY(-2px);
   }
 
   /* ── FTSE Session ── */
@@ -451,14 +453,10 @@
 
 <div class="hero">
   <img src="images/backdrop-bangkok.jpg" alt="Vietnam Access Days 2026 Bangkok" class="hero-backdrop">
-  <div class="hero-action-bar">
-    <span class="coverage-label">Company Coverage</span>
-    <span class="coverage-count">4 High-Conviction Ideas</span>
-    <a class="register-btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=IWvkP1KQ4kqW1WNL1TLE5eKevSlvIOhGsUoApGqrZF1UOEQ0TFNEN0NKUDNUUjZLMU5NQkRIOTBVRi4u" target="_blank" rel="noopener">
-      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
-      Register to Attend
-    </a>
-  </div>
+  <a class="hero-register-btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=IWvkP1KQ4kqW1WNL1TLE5eKevSlvIOhGsUoApGqrZF1UOEQ0TFNEN0NKUDNUUjZLMU5NQkRIOTBVRi4u" target="_blank" rel="noopener">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+    Register Now
+  </a>
 </div>
 
 
