@@ -97,8 +97,8 @@
 
   /* ── FTSE Session ── */
   .ftse-session {
-    background: linear-gradient(135deg, #0c2340 0%, #1a3a5c 100%);
-    border: 1px solid #1e4976;
+    background: linear-gradient(135deg, #0a0f0a 0%, #0d1f10 60%, #112a14 100%);
+    border: 1px solid rgba(74,222,128,.18);
     border-radius: 16px;
     padding: 32px 36px;
     margin-bottom: 8px;
@@ -108,12 +108,57 @@
   .ftse-session::before {
     content: '';
     position: absolute;
-    top: -40px; right: -40px;
-    width: 200px; height: 200px;
-    background: #1d6fa4;
-    opacity: .12;
-    border-radius: 50%;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(74,222,128,.15) 0%, transparent 70%);
     pointer-events: none;
+  }
+  .ftse-body {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+  }
+  .ftse-content { flex: 1; min-width: 0; }
+  .ftse-speaker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    width: 130px;
+  }
+  .ftse-speaker img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(74,222,128,.4);
+  }
+  .ftse-speaker-initials {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a3a1f, #2d6b35);
+    border: 2px solid rgba(74,222,128,.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #4ADE80;
+  }
+  .ftse-speaker-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .ftse-speaker-role {
+    font-size: 11px;
+    color: rgba(74,222,128,.8);
+    text-align: center;
+    line-height: 1.4;
   }
   .ftse-logo-row {
     display: flex;
@@ -126,9 +171,8 @@
     font-weight: 800;
     letter-spacing: .08em;
     text-transform: uppercase;
-    color: #fff;
-    background: #1d6fa4;
-    border: 1px solid #2a85c4;
+    color: #0a0f0a;
+    background: #4ADE80;
     border-radius: 6px;
     padding: 4px 12px;
   }
@@ -137,8 +181,8 @@
     font-weight: 600;
     letter-spacing: .1em;
     text-transform: uppercase;
-    color: #7dbfea;
-    border: 1px solid #2a4d6e;
+    color: rgba(74,222,128,.7);
+    border: 1px solid rgba(74,222,128,.25);
     border-radius: 20px;
     padding: 3px 10px;
   }
@@ -152,24 +196,24 @@
   .ftse-desc {
     font-size: 14px;
     line-height: 1.75;
-    color: rgba(255,255,255,.7);
+    color: rgba(255,255,255,.65);
     max-width: 780px;
     margin-bottom: 20px;
   }
   .ftse-meta {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
     font-size: 12px;
     font-weight: 600;
-    color: #7dbfea;
+    color: rgba(74,222,128,.8);
   }
   .ftse-meta span {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.1);
+    background: rgba(74,222,128,.07);
+    border: 1px solid rgba(74,222,128,.2);
     border-radius: 20px;
     padding: 5px 12px;
   }
@@ -470,25 +514,34 @@
 
     <div class="section-label">Featured Session</div>
     <div class="ftse-session">
-      <div class="ftse-logo-row">
-        <span class="ftse-badge">FTSE Russell</span>
-        <span class="ftse-tag">Market Update</span>
-      </div>
-      <div class="ftse-title">Vietnam Market Update</div>
-      <p class="ftse-desc">Join FTSE Russell for an update on Vietnam's capital markets following its upgrade to Secondary Emerging Market status. The session will cover recent regulatory and market developments, implications for foreign investment flows, market accessibility reforms, and Vietnam's outlook within global emerging market portfolios.</p>
-      <div class="ftse-meta">
-        <span>
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
-          Secondary Emerging Market Upgrade
-        </span>
-        <span>
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Foreign Investment Flows
-        </span>
-        <span>
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          EM Portfolio Outlook
-        </span>
+      <div class="ftse-body">
+        <div class="ftse-content">
+          <div class="ftse-logo-row">
+            <span class="ftse-badge">FTSE Russell</span>
+            <span class="ftse-tag">Market Update</span>
+          </div>
+          <div class="ftse-title">Vietnam Market Update</div>
+          <p class="ftse-desc">Join FTSE Russell for an update on Vietnam's capital markets following its upgrade to Secondary Emerging Market status. The session will cover recent regulatory and market developments, implications for foreign investment flows, market accessibility reforms, and Vietnam's outlook within global emerging market portfolios.</p>
+          <div class="ftse-meta">
+            <span>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+              Secondary Emerging Market Upgrade
+            </span>
+            <span>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Foreign Investment Flows
+            </span>
+            <span>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              EM Portfolio Outlook
+            </span>
+          </div>
+        </div>
+        <div class="ftse-speaker">
+          <div class="ftse-speaker-initials" id="ftse-speaker-avatar">WD</div>
+          <div class="ftse-speaker-name">Wanming Du</div>
+          <div class="ftse-speaker-role">Index Policy Director, FTSE Russell</div>
+        </div>
       </div>
     </div>
 
