@@ -564,13 +564,30 @@
 
     /* Company cards */
     .company-card { border-radius: 12px; }
-    .card-header { padding: 14px 14px 10px; gap: 10px; flex-wrap: nowrap; }
+    .card-header {
+      padding: 14px 14px 10px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .ticker-block { flex: 0 0 auto; }
     .ticker-badge { font-size: 13px; padding: 4px 10px; }
+    .card-header > div:nth-child(2) { flex: 1; min-width: 0; }
     .company-name { font-size: 14px; }
     .sector-tag { font-size: 11px; }
-    .target-price { font-size: 17px; }
-    .upside-badge { font-size: 11px; padding: 2px 7px; }
-    .current-price { font-size: 10px; }
+    .price-block {
+      flex: 0 0 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8f8f8;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-top: 2px;
+    }
+    .price-block-inner { text-align: left; }
+    .target-price { font-size: 18px; }
+    .upside-badge { font-size: 12px; padding: 3px 10px; margin-top: 0; }
+    .current-price { font-size: 11px; }
     .card-body { padding: 12px 14px 14px; }
     .thesis-box { font-size: 12.5px; padding: 10px 12px; }
     .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
