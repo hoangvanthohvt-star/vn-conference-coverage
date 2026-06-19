@@ -122,53 +122,53 @@
   .ftse-speaker {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 6px;
     flex-shrink: 0;
-    width: 160px;
+    width: 150px;
   }
   .ftse-speaker img {
-    width: 130px;
-    height: 160px;
-    border-radius: 4px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     object-fit: cover;
     object-position: center top;
-    border-top: 2px solid #d0d0d0;
-    border-right: 2px solid #d0d0d0;
-    border-bottom: 4px solid #4ADE80;
-    border-left: 4px solid #4ADE80;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
   }
   .ftse-speaker-initials {
-    width: 130px;
-    height: 160px;
-    border-radius: 4px;
-    background: #f0f0f0;
-    border-top: 2px solid #d0d0d0;
-    border-right: 2px solid #d0d0d0;
-    border-bottom: 4px solid #4ADE80;
-    border-left: 4px solid #4ADE80;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #e8e8e8;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 700;
     color: #999;
   }
   .ftse-speaker-name {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     color: #111;
-    text-align: center;
-    letter-spacing: .08em;
+    text-align: left;
+    letter-spacing: .04em;
     text-transform: uppercase;
     line-height: 1.4;
-    margin-top: 2px;
+    margin-top: 4px;
   }
   .ftse-speaker-role {
-    font-size: 11.5px;
-    color: #777;
-    text-align: center;
-    line-height: 1.6;
+    font-size: 12px;
+    color: #888;
+    text-align: left;
+    line-height: 1.7;
+  }
+  .ftse-speaker-company {
+    font-size: 12px;
+    color: #555;
+    text-align: left;
+    font-weight: 500;
   }
   .ftse-logo-row {
     display: flex;
@@ -552,7 +552,8 @@
         <div class="ftse-speaker">
           <div class="ftse-speaker-initials" id="ftse-speaker-avatar">WD</div>
           <div class="ftse-speaker-name">Wanming Du</div>
-          <div class="ftse-speaker-role">Index Policy Director<br>FTSE Russell</div>
+          <div class="ftse-speaker-role">Index Policy Director</div>
+          <div class="ftse-speaker-company">FTSE Russell</div>
         </div>
       </div>
     </div>
