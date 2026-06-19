@@ -532,7 +532,55 @@
   }
   .register-btn:hover { background: #22c55e; transform: translateY(-1px); }
 
-  /* ── Loading ── */
+  /* ── Mobile ── */
+  @media (max-width: 768px) {
+    .container { padding: 0 14px; }
+
+    /* Hero */
+    .hero-backdrop { max-height: 55vw; object-fit: cover; }
+    .hero-register-btn { bottom: 12px; right: 14px; gap: 8px; }
+    .hero-register-btn .reg-bar { height: 24px; }
+    .hero-register-btn .reg-text { font-size: 15px; }
+
+    /* FTSE card */
+    .ftse-session { padding: 18px 16px; }
+    .ftse-body { flex-direction: column; gap: 16px; }
+    .ftse-speaker { flex-direction: row; align-items: center; width: 100%; gap: 14px; }
+    .ftse-speaker img, .ftse-speaker-initials { width: 60px; height: 60px; margin-left: 0; margin-bottom: 0; }
+    .ftse-speaker-card { padding: 12px 14px; }
+    .ftse-speaker-name { font-size: 12px; }
+    .ftse-speaker-role, .ftse-speaker-company { font-size: 11px; }
+    .ftse-title { font-size: 17px; }
+    .ftse-desc { font-size: 13px; }
+    .ftse-logo-row { flex-wrap: wrap; }
+
+    /* Section labels */
+    .section-label { margin: 28px 0 12px; font-size: 10px; }
+
+    /* Summary table */
+    .summary-table-wrap { overflow-x: auto; }
+    .summary-table { font-size: 12px; min-width: 560px; }
+    .summary-table th, .summary-table td { padding: 9px 10px; }
+
+    /* Company cards */
+    .company-card { border-radius: 12px; }
+    .card-header { padding: 14px 14px 10px; gap: 10px; flex-wrap: nowrap; }
+    .ticker-badge { font-size: 13px; padding: 4px 10px; }
+    .company-name { font-size: 14px; }
+    .sector-tag { font-size: 11px; }
+    .target-price { font-size: 17px; }
+    .upside-badge { font-size: 11px; padding: 2px 7px; }
+    .current-price { font-size: 10px; }
+    .card-body { padding: 12px 14px 14px; }
+    .thesis-box { font-size: 12.5px; padding: 10px 12px; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .metric-value { font-size: 15px; }
+    .two-col { grid-template-columns: 1fr; gap: 8px; }
+    .analyst-row { flex-wrap: wrap; gap: 6px; }
+    .pdf-btn { margin-left: 0; width: 100%; justify-content: center; }
+    .market-cap { margin-left: auto; }
+  }
+
   #loading {
     text-align: center;
     padding: 80px 20px;
