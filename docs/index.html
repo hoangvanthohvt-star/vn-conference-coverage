@@ -266,11 +266,11 @@
   .company-card {
     background: #ffffff;
     border: 1px solid #e8eae8;
-    border-radius: 16px;
-    margin-bottom: 20px;
+    border-radius: 14px;
+    margin-bottom: 14px;
     overflow: hidden;
     transition: box-shadow .2s;
-    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    box-shadow: 0 1px 4px rgba(0,0,0,.05);
     position: relative;
   }
   .company-card::before {
@@ -279,42 +279,38 @@
     top: 0; left: 0;
     width: 4px; height: 100%;
     background: #4ADE80;
-    border-radius: 16px 0 0 16px;
+    border-radius: 14px 0 0 14px;
   }
   .company-card:hover {
-    box-shadow: 0 6px 24px rgba(0,0,0,.09);
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
   }
 
   .card-header {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 28px 28px 0;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px 12px 20px;
     flex-wrap: wrap;
+    border-bottom: 1px solid #f0f0f0;
   }
-  .card-num {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .1em;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
+  .card-num { display: none; }
   .ticker-block { flex: 0 0 auto; }
   .ticker-badge {
     display: inline-flex;
     align-items: center;
-    font-size: 22px;
+    font-size: 15px;
     font-weight: 800;
-    letter-spacing: -.01em;
-    padding: 8px 16px;
-    border-radius: 10px;
-    border: 2px solid;
+    letter-spacing: .02em;
+    padding: 5px 12px;
+    border-radius: 8px;
+    border: 1.5px solid;
   }
   .company-name {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
+    color: #111;
   }
   .sector-tag {
     display: inline-flex;
@@ -345,81 +341,84 @@
 
   .price-block {
     margin-left: auto;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     flex: 0 0 auto;
   }
+  .price-block-inner { text-align: right; }
   .target-price {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 800;
-    letter-spacing: -.02em;
+    letter-spacing: -.01em;
     line-height: 1;
+    color: #1e3a6e;
   }
-  .price-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .price-label { font-size: 10px; color: #999; margin-bottom: 2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
   .upside-badge {
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     color: #009955;
     background: rgba(0,191,111,.08);
     border: 1px solid rgba(0,191,111,.2);
-    border-radius: 8px;
-    padding: 3px 10px;
-    margin-top: 4px;
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin-top: 3px;
   }
-  .current-price { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .current-price { font-size: 11px; color: #999; margin-top: 2px; }
 
-  .card-body { padding: 24px 28px 28px; }
+  .card-body { padding: 14px 20px 16px; }
 
   /* ── Thesis ── */
   .thesis-box {
     background: #f8f8f8;
-    border-left: 3px solid #d0d0d0;
-    border-radius: 0 10px 10px 0;
-    padding: 14px 18px;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #444;
-    margin-bottom: 24px;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: #555;
+    margin-bottom: 12px;
   }
 
   /* ── Key Metrics ── */
   .metrics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 12px;
-    margin-bottom: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
   }
   .metric-cell {
     background: #f7f8f7;
-    border: 1px solid #e5e7e5;
-    border-radius: 10px;
-    padding: 12px 14px;
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    padding: 8px 12px;
   }
-  .metric-label { font-size: 11px; color: #888; font-weight: 600; letter-spacing: .05em; margin-bottom: 4px; }
-  .metric-value { font-size: 18px; font-weight: 700; color: #111; }
+  .metric-label { font-size: 10px; color: #999; font-weight: 600; letter-spacing: .05em; margin-bottom: 2px; }
+  .metric-value { font-size: 15px; font-weight: 700; color: #111; }
 
   /* ── Catalysts & Risks ── */
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
 
-  .list-box { border-radius: 10px; padding: 14px 16px; }
-  .list-box.catalysts { background: rgba(0,191,111,.04); border: 1px solid rgba(0,191,111,.18); }
-  .list-box.risks     { background: rgba(220,50,50,.04);  border: 1px solid rgba(220,50,50,.15);  }
+  .list-box { border-radius: 8px; padding: 10px 12px; }
+  .list-box.catalysts { background: rgba(0,191,111,.04); border: 1px solid rgba(0,191,111,.15); }
+  .list-box.risks     { background: rgba(220,50,50,.03);  border: 1px solid rgba(220,50,50,.12);  }
   .list-title {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: .1em;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
   .list-box.catalysts .list-title { color: #009955; }
   .list-box.risks     .list-title { color: #cc3333; }
   .list-box ul { list-style: none; }
   .list-box ul li {
-    font-size: 13px;
+    font-size: 12px;
     color: #555f6b;
-    padding: 4px 0;
-    padding-left: 14px;
+    padding: 2px 0;
+    padding-left: 12px;
     position: relative;
     line-height: 1.5;
   }
@@ -431,24 +430,24 @@
   .analyst-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
   }
   .analyst-avatar {
-    width: 28px; height: 28px;
+    width: 24px; height: 24px;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 700;
-    background: var(--surface2);
-    border: 1px solid var(--border);
+    font-size: 10px; font-weight: 700;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
     flex-shrink: 0;
   }
-  .analyst-name { font-size: 13px; color: var(--muted); }
-  .analyst-name strong { color: var(--text); font-weight: 600; }
-  .market-cap { margin-left: auto; font-size: 12px; color: var(--muted); }
-  .market-cap strong { color: var(--text); }
+  .analyst-name { font-size: 12px; color: #888; }
+  .analyst-name strong { color: #333; font-weight: 600; }
+  .market-cap { margin-left: auto; font-size: 11px; color: #888; }
+  .market-cap strong { color: #333; }
 
   /* ── Summary table ── */
   .summary-table-wrap {
@@ -678,10 +677,12 @@ async function load() {
           </div>
         </div>
         <div class="price-block">
-          <div class="price-label">12M Target</div>
-          <div class="target-price" style="color:${c.sectorColor}">${c.targetPrice.toLocaleString()}</div>
-          <div><span class="upside-badge">↑ ${c.upside}% upside</span></div>
-          <div class="current-price">Current: ${c.currentPrice.toLocaleString()} VND</div>
+          <div class="price-block-inner">
+            <div class="price-label">12M Target</div>
+            <div class="target-price">${c.targetPrice.toLocaleString()}</div>
+            <div class="current-price">Current: ${c.currentPrice.toLocaleString()}</div>
+          </div>
+          <span class="upside-badge">↑ ${c.upside}%</span>
         </div>
       </div>
 
@@ -694,7 +695,7 @@ async function load() {
           ${c.keyMetrics.map(m => `
             <div class="metric-cell">
               <div class="metric-label">${m.label}</div>
-              <div class="metric-value" style="color:${c.sectorColor}">${m.value}</div>
+              <div class="metric-value">${m.value}</div>
             </div>
           `).join('')}
         </div>
