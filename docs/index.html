@@ -266,12 +266,20 @@
   .company-card {
     background: #ffffff;
     border: 1px solid #e8eae8;
-    border-left: 4px solid #4ADE80;
     border-radius: 16px;
     margin-bottom: 20px;
     overflow: hidden;
     transition: box-shadow .2s;
     box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    position: relative;
+  }
+  .company-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: #4ADE80;
+    border-radius: 16px 0 0 16px;
   }
   .company-card:hover {
     box-shadow: 0 6px 24px rgba(0,0,0,.09);
@@ -443,17 +451,27 @@
   .market-cap strong { color: var(--text); }
 
   /* ── Summary table ── */
+  .summary-table-wrap {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #e8eae8;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    margin-bottom: 40px;
+  }
+  .summary-table-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: #4ADE80;
+    z-index: 1;
+  }
   .summary-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
-    margin-bottom: 40px;
     background: #ffffff;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid #e8eae8;
-    border-left: 4px solid #4ADE80;
-    box-shadow: 0 1px 4px rgba(0,0,0,.06);
   }
   .summary-table th {
     text-align: left;
@@ -576,7 +594,7 @@
     </div>
 
     <div class="section-label">At a Glance</div>
-    <table class="summary-table" id="summary-table">
+    <div class="summary-table-wrap"><table class="summary-table" id="summary-table">
       <thead>
         <tr>
           <th>#</th>
@@ -592,7 +610,7 @@
         </tr>
       </thead>
       <tbody id="summary-body"></tbody>
-    </table>
+    </table></div>
 
     <div class="section-label">Corporate Summaries</div>
     <div id="cards-container"></div>
