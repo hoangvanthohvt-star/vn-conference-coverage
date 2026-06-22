@@ -759,6 +759,11 @@ async function load() {
   const container = document.getElementById('cards-container');
   companies.forEach(c => {
     const initials = c.analyst.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+    // Auto-calculate NAV Discount for DXG
+    if (c.ticker === 'DXG') {
+      const navMetric = c.keyMetrics.find(m => m.label === 'NAV Discount');
+      if (navMetric) navMetric.value = (c.currentPrice / c.targetPrice - 1).toLocaleString('en', {style:'percent', minimumFractionDigits:1, maximumFractionDigits:1});
+    }
     const card = document.createElement('div');
     card.className = 'company-card';
     card.innerHTML = `
