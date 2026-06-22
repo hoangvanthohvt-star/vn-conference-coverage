@@ -39,14 +39,14 @@
       "upside": 25.5,
       "marketCap": "USD 1.2B",
       "analyst": "Huy Hoang",
-      "thesis": "Gemadept is Vietnam's premier port and logistics operator, uniquely positioned to capture surging export volumes driven by supply chain diversification away from China. The Nam Dinh Vu deep-water terminal expansion and growing cold-chain logistics segment provide visible earnings growth through 2027.",
+      "thesis": "GMD is Vietnam's premier port and logistics operator, uniquely positioned to capture surging export volumes driven by supply chain diversification away from China. The Nam Dinh Vu and Gemalink terminal expansion provide visible earnings growth through 2027.",
       "keyMetrics": [
         { "label": "P/E 2026E", "value": "14.5x" },
         { "label": "EV/EBITDA", "value": "8.2x" },
         { "label": "Revenue Growth", "value": "+24% YoY" },
         { "label": "EBITDA Margin", "value": "38%" }
       ],
-      "catalysts": ["Nam Dinh Vu Phase 2 completion", "FDI-driven export volume ramp", "Cold-chain logistics expansion"],
+      "catalysts": ["FDI-driven export volume growth.", "Nam Dinh Vu Phase 3 utilization ramp up.", "Gemalink expansion with capacity to at least double over next 2–3 years."],
       "risks": ["Global trade slowdown", "Competition from new port entrants"]
     },
     {
