@@ -61,15 +61,15 @@
       "upside": 23.8,
       "marketCap": "USD 638M",
       "analyst": "Anh Pham",
-      "thesis": "Dat Xanh is a diversified real estate developer with strong mid-market residential exposure in Ho Chi Minh City and the southern provinces. Legal clearances on key projects, improving mortgage market conditions, and a recovering property cycle position DXG for a meaningful earnings re-rating over the next 12–18 months.",
+      "thesis": "Dat Xanh is a diversified real estate developer with strong mid-market residential exposure in Ho Chi Minh City and the southern provinces. A maturing project pipeline and recovering property cycle position DXG for a meaningful earnings re-rating over 2027–28 as handover revenue ramps up.",
       "keyMetrics": [
         { "label": "P/E 2026E", "value": "9.4x" },
         { "label": "P/B", "value": "1.3x" },
         { "label": "Pre-sales Growth", "value": "+40% YoY" },
         { "label": "NAV Discount", "value": "38%" }
       ],
-      "catalysts": ["Project legal approval pipeline", "Mortgage rate easing cycle", "Southern Vietnam urbanisation"],
-      "risks": ["Policy risk on real estate credit", "Prolonged project approval delays"]
+      "catalysts": ["The Privé handover commencement in 2027.", "GSW and new project launch pipeline.", "Mortgage rate easing cycle."],
+      "risks": ["Policy risk on real estate credit.", "Prolonged project approval delays."]
     },
     {
       "id": 4,
