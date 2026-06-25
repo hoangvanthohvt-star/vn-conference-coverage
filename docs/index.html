@@ -506,21 +506,22 @@
   .register-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: .03em;
-    color: #000;
-    background: #4ADE80;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: .01em;
+    color: #fff;
+    background: rgba(10,10,10,0.85);
     border: none;
-    border-radius: 10px;
-    padding: 11px 26px;
+    border-left: 5px solid #4ADE80;
+    border-radius: 4px;
+    padding: 14px 28px;
     cursor: pointer;
-    transition: background .15s, transform .1s;
+    transition: background .15s;
     text-decoration: none;
     white-space: nowrap;
+    backdrop-filter: blur(4px);
   }
-  .register-btn:hover { background: #22c55e; transform: translateY(-1px); }
+  .register-btn:hover { background: rgba(10,10,10,0.97); }
 
   /* ── Mobile ── */
   @media (max-width: 768px) {
