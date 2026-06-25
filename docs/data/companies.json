@@ -41,10 +41,10 @@
       "analyst": "Huy Hoang",
       "thesis": "GMD is Vietnam's premier port and logistics operator, uniquely positioned to capture surging export volumes driven by supply chain diversification away from China. The Nam Dinh Vu and Gemalink terminal expansion provide visible earnings growth through 2027.",
       "keyMetrics": [
-        { "label": "P/E 2026E", "value": "14.5x" },
-        { "label": "EV/EBITDA", "value": "8.2x" },
-        { "label": "Revenue Growth", "value": "+24% YoY" },
-        { "label": "EBITDA Margin", "value": "38%" }
+        { "label": "P/E 2026/27F", "value": "13.1x/11.7x" },
+        { "label": "EV/EBITDA 2026F", "value": "7.6x" },
+        { "label": "Revenue Growth 2026F", "value": "+23.2% YoY" },
+        { "label": "Core Earning Growth 2026F", "value": "34%" }
       ],
       "catalysts": ["FDI-driven export volume growth.", "Nam Dinh Vu Phase 3 utilization ramp up.", "Gemalink expansion with capacity to at least double over next 2–3 years."],
       "risks": ["Global trade slowdown", "Competition from new port entrants"]
