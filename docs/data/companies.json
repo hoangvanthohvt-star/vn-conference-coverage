@@ -19,10 +19,10 @@
       "analyst": "Ngoc Huynh",
       "thesis": "F88 is Vietnam's leading modern alternative financing chain with over 970 branches nationwide, serving the country's large underbanked population. As financial inclusion accelerates, we expect strong loan growth, improving funding access, and technology-driven operating leverage to support sustainable ROE above 30%, positioning F88 as a key beneficiary of the formalization of Vietnam's consumer finance market.",
       "keyMetrics": [
-        { "label": "P/E 2026E", "value": "11.2x" },
-        { "label": "P/B", "value": "2.1x" },
-        { "label": "Loan Growth", "value": "+35% YoY" },
-        { "label": "ROE", "value": "22%" }
+        { "label": "P/E 2026/27F", "value": "14.9x/10.4x" },
+        { "label": "P/B 2026/27F", "value": "4.9x/3.4x" },
+        { "label": "Disbursement Growth 2026F", "value": "46% YoY" },
+        { "label": "ROE 2026F", "value": "39%" }
       ],
       "catalysts": ["Large underbanked population supports loan growth.", "Tech-driven underwriting enhances asset quality.", "Diversified income and MBB partnership drive growth.", "HOSE listing improves funding access and reduces costs."],
       "risks": ["Regulatory tightening on consumer lending", "Asset quality deterioration in downturn"]
