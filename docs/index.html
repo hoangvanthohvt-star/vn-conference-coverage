@@ -70,32 +70,12 @@
     object-fit: cover;
     object-position: center center;
   }
+  .hero-register {
+    position: absolute;
+    bottom: 28px;
+    right: 32px;
+  }
 
-  /* ── Register Bar ── */
-  .register-bar-wrap {
-    background: #fff;
-    border-bottom: 1px solid #e8eae8;
-    display: flex;
-    justify-content: center;
-    padding: 14px 24px;
-  }
-  .register-bar-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Manrope', 'DM Sans', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #1a1a1a;
-    text-decoration: none;
-    border: 2px solid #1a1a1a;
-    border-radius: 12px;
-    padding: 12px 36px;
-    background: #fff;
-    transition: background .2s, color .2s;
-    -webkit-font-smoothing: antialiased;
-  }
-  .register-bar-btn:hover { background: #1a1a1a; color: #fff; }
 
   /* ── FTSE Session ── */
   .ftse-session {
@@ -548,7 +528,6 @@
 
     /* Hero */
     .hero-backdrop { max-height: 55vw; object-fit: cover; }
-    .register-bar-btn { font-size: 15px; padding: 8px 18px; }
 
     /* FTSE card */
     .ftse-session { padding: 18px 16px; }
@@ -622,12 +601,11 @@
 
 <div class="hero">
   <img src="images/backdrop-bangkok.jpg" alt="Vietnam Access Days 2026 Bangkok" class="hero-backdrop">
-</div>
-
-<div class="register-bar-wrap">
-  <a class="register-bar-btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=IWvkP1KQ4kqW1WNL1TLE5eKevSlvIOhGsUoApGqrZF1UODMxOVROSTAwTEMzWDA4SVFNSTczWTNYVS4u" target="_blank" rel="noopener">
-    Register Now &rarr;
-  </a>
+  <div class="hero-register">
+    <a class="register-btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=IWvkP1KQ4kqW1WNL1TLE5eKevSlvIOhGsUoApGqrZF1UODMxOVROSTAwTEMzWDA4SVFNSTczWTNYVS4u" target="_blank" rel="noopener">
+      Register Here
+    </a>
+  </div>
 </div>
 
 
