@@ -1,0 +1,340 @@
+:root {
+  --bg-top: #fff6e5;
+  --bg-bottom: #d7f0ff;
+  --ink: #3a3244;
+  --card-shadow: 0 10px 0 rgba(0,0,0,0.08);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Heiti SC", "Noto Sans SC", system-ui, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.mascot {
+  font-size: 64px;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.site-header h1 {
+  font-size: 32px;
+  margin: 8px 0 4px;
+}
+
+.site-header p {
+  margin: 0;
+  font-size: 18px;
+  color: #6b6178;
+}
+
+/* ---------- Unit grid ---------- */
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.unit-card {
+  background: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.15s ease;
+  font-family: inherit;
+  color: inherit;
+  position: relative;
+}
+
+.unit-card:hover, .unit-card:focus-visible {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.unit-card:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.08);
+}
+
+.unit-card .icon {
+  font-size: 56px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.unit-card .title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.unit-card .star {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 24px;
+}
+
+/* ---------- Buttons (shared) ---------- */
+.big-button {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.12);
+  transition: transform 0.1s ease;
+  color: #fff;
+}
+
+.big-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.12);
+}
+
+.big-button.secondary {
+  background: #ffffff;
+  color: var(--ink);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.08);
+}
+
+/* ---------- Unit page ---------- */
+.back-link {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #6b6178;
+  margin-bottom: 12px;
+  padding: 8px 4px;
+}
+
+.unit-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.unit-header .icon {
+  font-size: 48px;
+}
+
+.unit-header h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.progress-dots .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #e2dcec;
+}
+
+.progress-dots .dot.active {
+  background: var(--dot-color, #B15BE0);
+}
+
+/* ---------- Slide card ---------- */
+.slide-card {
+  background: #fff;
+  border-radius: 28px;
+  padding: 40px 24px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.slide-card .emoji {
+  font-size: 72px;
+}
+
+.slide-card .text {
+  font-size: 26px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.slide-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Quiz ---------- */
+.quiz-question {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 16px;
+}
+
+.quiz-option {
+  background: #fff;
+  border: 4px solid transparent;
+  border-radius: 20px;
+  padding: 18px;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  font-family: inherit;
+  color: inherit;
+  transition: transform 0.1s ease;
+}
+
+.quiz-option .emoji {
+  font-size: 30px;
+}
+
+.quiz-option:active {
+  transform: scale(0.98);
+}
+
+.quiz-option.correct {
+  border-color: #4CAF7D;
+  background: #eafff2;
+  animation: pop 0.3s ease;
+}
+
+.quiz-option.wrong {
+  border-color: #e05b5b;
+  background: #fff0f0;
+  animation: shake 0.4s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+.feedback {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 16px;
+  min-height: 32px;
+}
+
+.feedback.good { color: #2e9e63; }
+.feedback.retry { color: #d1483f; }
+
+/* ---------- Completion screen ---------- */
+.complete-screen {
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.complete-screen .big-emoji {
+  font-size: 96px;
+  animation: pop 0.6s ease;
+}
+
+.complete-screen h2 {
+  font-size: 30px;
+}
+
+/* ---------- Listen button ---------- */
+.listen-button {
+  background: #ffd166;
+  color: #4a3400;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+}
+
+.listen-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+}
+
+/* ---------- Confetti ---------- */
+.confetti-piece {
+  position: fixed;
+  top: -20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  pointer-events: none;
+  animation: fall linear forwards;
+  z-index: 999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(105vh) rotate(720deg);
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header h1 { font-size: 26px; }
+  .slide-card .emoji { font-size: 56px; }
+  .slide-card .text { font-size: 22px; }
+}
