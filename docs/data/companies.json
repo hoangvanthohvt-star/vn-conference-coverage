@@ -19,8 +19,8 @@
       "analyst": "Ngoc Huynh",
       "thesis": "F88 is Vietnam's leading modern alternative financing chain with over 970 branches nationwide, serving the country's large underbanked population. As financial inclusion accelerates, we expect strong loan growth, improving funding access, and technology-driven operating leverage to support sustainable ROE above 30%, positioning F88 as a key beneficiary of the formalization of Vietnam's consumer finance market.",
       "keyMetrics": [
-        { "label": "P/E 2026/27F", "value": "14.9x/10.4x" },
-        { "label": "P/B 2026/27F", "value": "4.9x/3.4x" },
+        { "label": "P/E 2026/27F", "value": "13.6x/9.4x" },
+        { "label": "P/B 2026/27F", "value": "4.5x/3.0x" },
         { "label": "Disbursement Growth 2026F", "value": "46% YoY" },
         { "label": "ROE 2026F", "value": "39%" }
       ],
@@ -41,8 +41,8 @@
       "analyst": "Huy Hoang",
       "thesis": "GMD is Vietnam's premier port and logistics operator, uniquely positioned to capture surging export volumes driven by supply chain diversification away from China. The Nam Dinh Vu and Gemalink terminal expansion provide visible earnings growth through 2027.",
       "keyMetrics": [
-        { "label": "P/E 2026/27F", "value": "13.1x/11.7x" },
-        { "label": "EV/EBITDA 2026F", "value": "7.6x" },
+        { "label": "Core P/E 2026/27F", "value": "11.2x/10.0x" },
+        { "label": "EV/EBITDA 2026F", "value": "6.8x" },
         { "label": "Revenue Growth 2026F", "value": "+23% YoY" },
         { "label": "Core Earning Growth 2026F", "value": "34%" }
       ],
@@ -63,8 +63,8 @@
       "analyst": "Anh Pham",
       "thesis": "Bluemarq Group (formerly Dat Xanh Group) is a diversified real estate developer with strong mid-market residential exposure in Ho Chi Minh City and the southern provinces. A maturing project pipeline and recovering property cycle position DXG for a meaningful earnings re-rating over 2027–28 as handover revenue ramps up.",
       "keyMetrics": [
-        { "label": "P/E 2026/27F", "value": "71x/8.7x" },
-        { "label": "P/B 2026/27F", "value": "1.1x/1.0x" },
+        { "label": "P/E 2026/27F", "value": "59x/7.5x" },
+        { "label": "P/B 2026/27F", "value": "1.0x/0.8x" },
         { "label": "2026-28F Average Presales", "value": "VND 9.2tn" },
         { "label": "NAV Discount", "value": "24.4%" }
       ],
@@ -85,10 +85,10 @@
       "analyst": "Vinh Bui",
       "thesis": "MCH is a leading FMCG manufacturer in Vietnam, with 50% market share in seasonings and 16% in convenience food. The premiumization of these categories and the expansion in beverages and home & personal care products support durable mid-teen earnings growth. Synergy with retailer Wincommerce boosts distribution strength across both GT and MT channels.",
       "keyMetrics": [
-        { "label": "P/E 2026/27F", "value": "21.8x/18.7x" },
+        { "label": "P/E 2026/27F", "value": "23.9x/20.6x" },
         { "label": "Revenue Growth", "value": "+12.5% YoY" },
-        { "label": "EBIT Margin", "value": "22%" },
-        { "label": "Dividend Yield", "value": "5.1%" }
+        { "label": "EBIT Margin", "value": "23%" },
+        { "label": "Dividend Yield", "value": "4.60%" }
       ],
       "catalysts": ["Direct-to-retailer initiatives accelerating revenue of beverages and HPC.", "Revenue bouncing back strong YoY in Q2–Q4 2026.", "FTSE and VN30 ETF inclusion."],
       "risks": ["Inflation pressure.", "GT disruptions due to presumptive tax removal.", "Prolonged disruptions from wholesaler reduction."]
