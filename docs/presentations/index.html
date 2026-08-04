@@ -168,6 +168,58 @@
     letter-spacing: .03em;
   }
 
+  /* ── File cards ── */
+  .files-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .file-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 24px 20px;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    transition: border-color .15s, box-shadow .15s, transform .15s;
+  }
+  .file-card:hover {
+    border-color: #39FF14;
+    box-shadow: 0 4px 18px rgba(57,255,20,.12);
+    transform: translateY(-2px);
+  }
+  .file-card-icon {
+    width: 52px; height: 52px;
+    background: rgba(57,255,20,.07);
+    border: 1.5px solid rgba(57,255,20,.2);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .file-card-body { flex: 1; }
+  .file-card-ticker {
+    font-size: 11px; font-weight: 800; letter-spacing: .1em;
+    text-transform: uppercase; color: #39FF14; margin-bottom: 6px;
+  }
+  .file-card-name {
+    font-size: 17px; font-weight: 800; letter-spacing: -.01em;
+    color: #101820; margin-bottom: 4px;
+  }
+  .file-card-sector {
+    font-size: 13px; color: var(--muted);
+  }
+  .file-card-dl {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12px; font-weight: 700; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--muted);
+    border-top: 1px solid var(--border); padding-top: 16px;
+    transition: color .15s;
+  }
+  .file-card:hover .file-card-dl { color: #39FF14; }
+
   @media (max-width: 600px) {
     .topbar { padding: 12px 16px; }
     .page-header { padding: 28px 16px 24px; }
@@ -197,27 +249,59 @@
 </div>
 
 <div class="container">
-  <div class="placeholder-card">
-    <div class="placeholder-icon">
-      <svg width="28" height="28" fill="none" stroke="#39FF14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <line x1="12" y1="18" x2="12" y2="12"/>
-        <polyline points="9 15 12 18 15 15"/>
-      </svg>
-    </div>
-    <div class="placeholder-title">Presentation materials are not available yet.</div>
-    <p class="placeholder-text">They will be uploaded to this page as they are received from participating companies.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a class="back-btn" href="../VAD-Bangkok-2026-Agenda.pdf" target="_blank" rel="noopener">
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        Agenda
-      </a>
-      <a class="back-btn" href="../">
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-        Back to Conference
-      </a>
-    </div>
+  <div class="files-grid">
+
+    <a class="file-card" href="VAD-Bangkok-2026-GMD.pdf" target="_blank" rel="noopener" download>
+      <div class="file-card-icon">
+        <svg width="26" height="26" fill="none" stroke="#39FF14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="18" x2="12" y2="12"/>
+          <polyline points="9 15 12 18 15 15"/>
+        </svg>
+      </div>
+      <div class="file-card-body">
+        <div class="file-card-ticker">GMD</div>
+        <div class="file-card-name">Gemadept Corporation</div>
+        <div class="file-card-sector">Logistics &amp; Ports</div>
+      </div>
+      <div class="file-card-dl">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </div>
+    </a>
+
+    <a class="file-card" href="VAD-Bangkok-2026-MCH.pdf" target="_blank" rel="noopener" download>
+      <div class="file-card-icon">
+        <svg width="26" height="26" fill="none" stroke="#39FF14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="18" x2="12" y2="12"/>
+          <polyline points="9 15 12 18 15 15"/>
+        </svg>
+      </div>
+      <div class="file-card-body">
+        <div class="file-card-ticker">MCH</div>
+        <div class="file-card-name">Masan Consumer</div>
+        <div class="file-card-sector">Consumer Staples</div>
+      </div>
+      <div class="file-card-dl">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </div>
+    </a>
+
+  </div>
+
+  <div style="text-align:center;margin-top:40px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a class="back-btn" href="../VAD-Bangkok-2026-Agenda.pdf" target="_blank" rel="noopener">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Agenda
+    </a>
+    <a class="back-btn" href="../">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Conference
+    </a>
   </div>
 </div>
 
